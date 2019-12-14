@@ -12,7 +12,7 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
+![overview image](https://github.com/Toumorokoshi96/dynamic_wordcard/tables.png?raw=true)
 * Database initialization
 
 * How to run the test suite
