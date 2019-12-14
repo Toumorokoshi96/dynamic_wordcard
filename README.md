@@ -54,93 +54,62 @@ Basic認証機能
 
 
 
-entity "resource_definition" << (A,orchid) >>{
-    + id [PK]
-    ==
+resource_definitionテーブル
     *name: text
     *type: text
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "relation_definition"  << (A,orchid) >>{
-    + id [PK]
-    ==
+
+relation_definitionテーブル
     *name: text
       represent_word: boolean
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "english_word" << (E,red) >>{
-    + id [PK]
-    ==
+
+english_wordテーブル
     *spell: text
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "japanese_word"  << (E,red) >>{
-    + id [PK]
-    ==
+
+japanese_wordテーブル
     *spell: text
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "image"  << (E,red) >>{
-    + id [PK]
-    ==
+
+imageテーブル
     *image: text
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "opus"  << (E,red) >>{
-    + id [PK]
-    ==
+
+opusテーブル
     *title: text
     *contest: long_text
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "english_image" << (R,gray) >>{
-    + id [PK]
-    ==
+
+english_imageテーブル
     # english_word_id [FK(english_word, id)]
     # image_id [FK(image, id)]
     weight: int
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "opus_english" << (R,gray) >>{
-    + id [PK]
-    ==
+
+opus_englishテーブル
     # opus_id [FK(image, id)]
     # english_word_id [FK(english_word, id)]
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "image_japanese"  << (R,gray) >>{
-    + id [PK]
-    ==
+
+image_japaneseテーブル
     # image_id [FK(image, id)]
     # japanese_word_id [FK(japanese_word, id)]
     weight: int
-    ==
     created_at: datetime
     updated_at: datetime
-}
-entity "english_japanese" << (R,gray) >>{
-    + id [PK]
-    ==
+
+english_japaneseテーブル
     # english_word_id [FK(english_word, id)]
     # japanese_word_id [FK(japanese_word, id)]
     weight: int
-    ==
     created_at: datetime
     updated_at: datetime
-}
