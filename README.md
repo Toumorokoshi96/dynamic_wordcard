@@ -62,7 +62,7 @@ resource_definitionテーブル
 
 relation_definitionテーブル
     *name: text
-      represent_word: boolean
+    represent_word: boolean
     created_at: datetime
     updated_at: datetime
 
