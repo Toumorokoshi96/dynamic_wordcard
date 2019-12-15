@@ -88,28 +88,28 @@ Basic認証機能
     updated_at: datetime
 
 ## english_imageテーブル
-    # english_word_id [FK(english_word, id)]
-    # image_id [FK(image, id)]
+    english_word_id: integer
+    image_id: integer
     weight: integer
     created_at: datetime
     updated_at: datetime
 
 ## opus_englishテーブル
-    # opus_id [FK(image, id)]
-    # english_word_id [FK(english_word, id)]
+    opus_id: integer
+    english_word_id: integer
     created_at: datetime
     updated_at: datetime
 
 ## image_japaneseテーブル
-    # image_id [FK(image, id)]
-    # japanese_word_id [FK(japanese_word, id)]
+    image_id: integer
+    japanese_word_id: integer
     weight: integer
     created_at: datetime
     updated_at: datetime
 
 ## english_japaneseテーブル
-    # english_word_id [FK(english_word, id)]
-    # japanese_word_id [FK(japanese_word, id)]
+    english_word_id: integer
+    japanese_word_id: integer
     weight: integer
     created_at: datetime
     updated_at: datetime
