@@ -54,60 +54,60 @@ Basic認証機能
 
 
 
-resource_definitionテーブル
+## resource_definitionテーブル
     *name: text
     *type: text
     created_at: datetime
     updated_at: datetime
 
-relation_definitionテーブル
+## relation_definitionテーブル
     *name: text
     represent_word: boolean
     created_at: datetime
     updated_at: datetime
 
-english_wordテーブル
+## english_wordテーブル
     *spell: text
     created_at: datetime
     updated_at: datetime
 
-japanese_wordテーブル
+## japanese_wordテーブル
     *spell: text
     created_at: datetime
     updated_at: datetime
 
-imageテーブル
+## imageテーブル
     *image: text
     created_at: datetime
     updated_at: datetime
 
-opusテーブル
+## opusテーブル
     *title: text
     *contest: long_text
     created_at: datetime
     updated_at: datetime
 
-english_imageテーブル
+## english_imageテーブル
     # english_word_id [FK(english_word, id)]
     # image_id [FK(image, id)]
     weight: int
     created_at: datetime
     updated_at: datetime
 
-opus_englishテーブル
+## opus_englishテーブル
     # opus_id [FK(image, id)]
     # english_word_id [FK(english_word, id)]
     created_at: datetime
     updated_at: datetime
 
-image_japaneseテーブル
+## image_japaneseテーブル
     # image_id [FK(image, id)]
     # japanese_word_id [FK(japanese_word, id)]
     weight: int
     created_at: datetime
     updated_at: datetime
 
-english_japaneseテーブル
+## english_japaneseテーブル
     # english_word_id [FK(english_word, id)]
     # japanese_word_id [FK(japanese_word, id)]
     weight: int
