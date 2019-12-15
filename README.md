@@ -55,61 +55,81 @@ Basic認証機能
 
 
 ## resource_definitionテーブル
-    *name: text
-    *type: text
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|name|text|unique|
+|type|text|unique|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## relation_definitionテーブル
-    *name: text
-    represent_word: boolean
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|name|text|unique|
+|represent_word|boolean||
+|created_at|datetime||
+|updated_at|datetime||
 
 ## english_wordテーブル
-    *spell: text
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|spell|text|unique|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## japanese_wordテーブル
-    *spell: text
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|spell|text|unique|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## imageテーブル
-    *image: text
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|image|text|unique|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## opusテーブル
-    *title: text
-    *contest: long_text
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|title|text|unique|
+|contest|long_text|unique|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## english_imageテーブル
-    english_word_id: integer, FK(english_word, id)
-    image_id: integer, FK(image, id)
-    weight: integer
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|english_word_id|integer|FK(english_word, id)|
+|image_id|integer|FK(image, id)|
+|weight|integer||
+|created_at|datetime||
+|updated_at|datetime||
 
 ## opus_englishテーブル
-    opus_id: integer, FK(image, id)
-    english_word_id: integer, FK(english_word, id)
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|opus_id|integer|FK(image, id)|
+|english_word_id|integer|FK(english_word, id)|
+|created_at|datetime||
+|updated_at|datetime||
 
 ## image_japaneseテーブル
-    image_id: integer, FK(image, id)
-    japanese_word_id: integer, FK(japanese_word, id)
-    weight: integer
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|image_id|integer|FK(image, id)|
+|japanese_word_id|integer|FK(japanese_word, id)|
+|weight|integer||
+|created_at|datetime||
+|updated_at|datetime||
 
 ## english_japaneseテーブル
-    english_word_id: integer, FK(english_word, id)
-    japanese_word_id: integer, FK(japanese_word, id)
-    weight: integer
-    created_at: datetime
-    updated_at: datetime
+|Column|Type|Options|
+|------|----|-------|
+|english_word_id|integer|FK(english_word, id)|
+|japanese_word_id|integer|FK(japanese_word, id)|
+|weight|integer||
+|created_at|datetime||
+|updated_at|datetime||
