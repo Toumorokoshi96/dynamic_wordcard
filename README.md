@@ -21,36 +21,35 @@ Things you may want to cover:
 
 * Deployment instructions
 
-test
+
 # README
 
-# アプリケーション概要
+
+# Summary
 
 
+# Functions
+## Registration of..
+### english words
+### images
+### japanese words
+### relation between datas the above
 
-# アプリケーションの機能一覧
+## Registration of users
+## Basic authentication
+## Log in/out
+## Mypage
 
-英単語登録機能
-画像登録機能
-日本語単語登録機能
-関係登録機能
+# Tools
 
-ユーザー新規登録機能
-Basic認証機能
-ユーザーログイン／ログアウト機能
-マイページ（登録リソースリスト表示）機能
-
-# アプリケーション内で使用している技術一覧
-
-|種別|名称|
+|Type|name|
 |----|---|
-|開発言語|Ruby(ver 2.5.1)|
-|フレームワーク|Ruby on Rails(ver 6.0.2)|
-|マークアップ|HTML(Haml),CSS(Sass)|
-|フロントエンド|JavaScript(jQuery)|
+|Programming language|Ruby(ver 2.5.1)|
+|Web framework|Ruby on Rails(ver 6.0.2)|
+|Frontend|HTML(Haml), CSS(Sass), JavaScript(jQuery)|
 |DB|MySQL|
-|本番環境|AWS EC2|
-|画像アップロード|carrierwave, AWS S3|
+|Image uploader|carrierwave|
+|Production environment|AWS EC2, AWS S3|
 
 
 
