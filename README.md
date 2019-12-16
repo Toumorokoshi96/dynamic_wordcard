@@ -62,6 +62,13 @@ Basic認証機能
 |created_at|datetime||
 |updated_at|datetime||
 
+### Association
+- has_many :english_words
+- has_many :japanese_words
+- has_many :opuses
+- has_many :images
+
+
 ## relation_definitionテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -70,12 +77,25 @@ Basic認証機能
 |created_at|datetime||
 |updated_at|datetime||
 
+### Association
+- has_many :english_japaneses
+- has_many :english_images
+- has_many :image_japaneses
+- has_many :opus_englishes
+
 ## english_wordテーブル
 |Column|Type|Options|
 |------|----|-------|
 |spell|text|unique|
 |created_at|datetime||
 |updated_at|datetime||
+
+### Association
+- belongs_to :resource_definition
+- has_many :japanese_words, thorough: :japanese_englishes
+- has_many :japanese_englishes
+- has_many :opuses, thorough: :opus_englishes
+- has_many :opus_englishes
 
 ## japanese_wordテーブル
 |Column|Type|Options|
@@ -84,12 +104,26 @@ Basic認証機能
 |created_at|datetime||
 |updated_at|datetime||
 
+### Association
+- belongs_to :resource_definition
+- has_many :ensligh_words, thorough: :japanese_englishes
+- has_many :japanese_englishes
+- has_many :opuses, thorough: :opus_englishes
+- has_many :opus_englishes
+
 ## imageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|unique|
 |created_at|datetime||
 |updated_at|datetime||
+
+### Association
+- belongs_to :resource_definition
+- has_many :ensligh_words, thorough: :ensligh_images
+- has_many :ensligh_images
+- has_many :japanese_words, thorough: :japanese_images
+- has_many :japanese_images
 
 ## opusテーブル
 |Column|Type|Options|
@@ -98,6 +132,11 @@ Basic認証機能
 |contest|long_text|unique|
 |created_at|datetime||
 |updated_at|datetime||
+
+### Association
+- belongs_to :resource_definition
+- has_many :ensligh_words, thorough: :ensligh_opuses
+- has_many :ensligh_opuses
 
 ## english_imageテーブル
 |Column|Type|Options|
@@ -108,6 +147,11 @@ Basic認証機能
 |created_at|datetime||
 |updated_at|datetime||
 
+### Association
+- belongs_to :relation_definition
+- belongs_to :ensligh_word
+- belongs_to :image
+
 ## opus_englishテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -115,6 +159,11 @@ Basic認証機能
 |english_word_id|integer|FK(english_word, id)|
 |created_at|datetime||
 |updated_at|datetime||
+
+### Association
+- belongs_to :relation_definition
+- belongs_to :opus
+- belongs_to :ensligh_word
 
 ## image_japaneseテーブル
 |Column|Type|Options|
@@ -125,6 +174,11 @@ Basic認証機能
 |created_at|datetime||
 |updated_at|datetime||
 
+### Association
+- belongs_to :relation_definition
+- belongs_to :image
+- belongs_to :japanese_word
+
 ## english_japaneseテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -133,3 +187,8 @@ Basic認証機能
 |weight|integer||
 |created_at|datetime||
 |updated_at|datetime||
+
+### Association
+- belongs_to :relation_definition
+- belongs_to :english_word
+- belongs_to :japanese_word
