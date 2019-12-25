@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spell:</strong>
+  <%= @japanese_word.spell %>
+</p>
+
+<%= link_to 'Edit', edit_japanese_word_path(@japanese_word) %> |
+<%= link_to 'Back', japanese_words_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Japanese Words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spell</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @japanese_words.each do |japanese_word| %>
+      <tr>
+        <td><%= japanese_word.spell %></td>
+        <td><%= link_to 'Show', japanese_word %></td>
+        <td><%= link_to 'Edit', edit_japanese_word_path(japanese_word) %></td>
+        <td><%= link_to 'Destroy', japanese_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Japanese Word', new_japanese_word_path %>

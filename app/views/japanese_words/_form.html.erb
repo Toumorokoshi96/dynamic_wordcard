@@ -1,0 +1,22 @@
+<%= form_with(model: japanese_word, local: true) do |form| %>
+  <% if japanese_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(japanese_word.errors.count, "error") %> prohibited this japanese_word from being saved:</h2>
+
+      <ul>
+        <% japanese_word.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :spell %>
+    <%= form.text_area :spell %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
